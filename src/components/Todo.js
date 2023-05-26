@@ -17,7 +17,7 @@ function Todo({todos, completeTodo, removeTodo, updateTodo}) {
     })
   };
 
-  if(edit.id) {
+  if (edit.id) {
     return <TodoForm edit={edit} onSubmit={submitUpdate} />
   }
 
@@ -26,7 +26,11 @@ function Todo({todos, completeTodo, removeTodo, updateTodo}) {
       className={todo.isComplete ? 'todo-row complete' : 'todo-row'}
       key={index}
     >
-      <div key={todo.id} onClick={() => completeTodo(todo.id)}>
+      <div
+        key={todo.id}
+        onClick={() => completeTodo(todo.id)}
+        className='todo-text'
+      >
         {todo.text}
       </div>
       <div className="icons">
