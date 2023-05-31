@@ -3,11 +3,15 @@ import TodoForm from "./TodoForm";
 import {RiCloseCircleLine} from "react-icons/ri";
 import {TiEdit} from "react-icons/ti";
 
-function Todo({todos, completeTodo, removeTodo, updateTodo}) {
+function Todo({todos, completeTodo, removeTodo, updateTodo, openPopup}) {
   const [edit, setEdit] = useState({
     id: null,
     value: '',
   });
+
+  const handleClick = (todo) => {
+    openPopup(todo);
+  };
 
   const submitUpdate = value => {
     updateTodo(edit.id, value)
@@ -25,6 +29,7 @@ function Todo({todos, completeTodo, removeTodo, updateTodo}) {
     <div
       className={todo.isComplete ? 'todo-row complete' : 'todo-row'}
       key={index}
+      onClick={() => handleClick(todo)}
     >
       <div
         key={todo.id}

@@ -14,13 +14,14 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: start;
-  width: 520px;
+  width: 620px;
   min-height: 600px;
   background: #161a2b;
   text-align: center;
   margin: 40px auto;
   border-radius: 10px;
   padding-bottom: 32px;
+  position: relative;
 }
 
 h1 {
@@ -112,4 +113,9 @@ h1 {
 
 .edit-icon {
   color: #fff;
+}
+
+.MuiDialogContent-root {
+  min-width: 500px;
+  min-height: 200px;
 }
